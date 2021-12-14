@@ -9,7 +9,6 @@ published: true
 この記事は[CAMPFIRE Advent Calendar 2021](https://qiita.com/advent-calendar/2021/campfire)の14日目の記事です。
 
 今回はAWS re:Inventをみてて、個人的に「おぉぉぉぉぉ！！！！！」と思ったサービス、AWS Amplify Studioを触ったのでそのログも兼ねて書きました。
-※ Amplify Admin UIもそんなに触ってなかったので、説明が拙いところあります。
 
 # AWS Amplify Studioについて
 AWS Amplify StudioはAWS Amplifyの特性を活かしつつ、ローコードで爆速なUI開発ができるGUI開発環境のことです。
@@ -193,14 +192,14 @@ file storageを設定して（そのまえにAuthenticationを設定して）カ
 
 
 ### うーんどうしたものかと思ってる点
-- Studioで生成したコードに対してロジック追加ができないこと
+- Studioで生成したコードに対してロジック追加ができないらしい
   - 保守を想定するとちょっと使いづらいのかもといった印象
-- Webフォントを自分で指定ができない
-- Figmaで作成したコンポーネントにWarningがあると、UIをただしく履いてくれない事がある
-  - 前述のWebフォントと少しかぶるが、Studioでの作成時点でFigmaで使用がストップしてるWebフォントを使うとテキストを表示してくれなかった（今回つかったデザインの作成時期がかなり前なのもあるかも）
+- Webフォントを指定できない
+- Figmaで作成したコンポーネントにWarningがあると、UIをただしくはいてくれない事がある？
+  - 前述のWebフォントと少しかぶるが、Studioでの作成時点でFigmaで使用がストップしてるWebフォントを使っているとpropsで値を入れてもテキストを表示してくれなかった（そもそも今回使ったデザインの作成時期がかなり前なのもあるかも）
     - まだ調査中なので分かり次第、editします
 - テキストエリアの大きさをよしなにできない
-  - 今回だとタイトルの部分が4文字以上になると改行されてしまうため、多分widthを固定されてるっぽい
+  - 今回だとタイトルの部分が4文字以上になると改行されてしまうため、多分widthか左右の余白をを固定されてるっぽい？
   - Reactにはき直した際にそのへんの調整がまだ必要？
    - もし解決方法知ってる人いたら教えて下さい
 
@@ -212,3 +211,4 @@ Figmaできちんと作らないとコンポーネントが正しくはかれな
 - https://dev.classmethod.jp/articles/new-aws-amplify-studio/
 - https://zenn.dev/qnaiv/articles/4d5a5526aa403d
 - https://zenn.dev/yoshii0110/articles/9f900b11203834qii
+
