@@ -6,7 +6,7 @@ topics: ["AWS", "Amplify", "amplifystudio", "Tech"]
 published: true
 ---
 
-この記事はCAMPFIRE Advent Calendar 2021の14日目の記事です。
+この記事は[CAMPFIRE Advent Calendar 2021](https://qiita.com/advent-calendar/2021/campfire)の14日目の記事です。
 
 今回はAWS re:Inventをみてて、個人的に「おぉぉぉぉぉ！！！！！」と思ったサービス、AWS Amplify Studioを触ったのでそのログも兼ねて書きました。
 ※ Amplify Admin UIもそんなに触ってなかったので、説明が拙いところあります。
