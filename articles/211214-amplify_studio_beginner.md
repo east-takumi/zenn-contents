@@ -28,7 +28,7 @@ AWS Amplify StudioはAWS Amplifyの特性を活かしつつ、ローコードで
 
 ## データモデルの作成
 データはAmplify Admin UIからの引き継ぎだから詳細は省きます。
-重要なのは ``UIコンポーネントとデータをバインドするために、Amplify上でデータのモデルを作成する``ということ
+UIコンポーネントとデータをバインドするために、データモデルを作成します。
 今回は下図のように作成しました。
 Enumを設定もできるし、神か？と思いました。
 
@@ -210,5 +210,5 @@ Figmaできちんと作らないとコンポーネントが正しくはかれな
 - https://aws.amazon.com/jp/blogs/news/aws-amplify-studio-figma-to-fullstack-react-app-with-minimal-programming/
 - https://dev.classmethod.jp/articles/new-aws-amplify-studio/
 - https://zenn.dev/qnaiv/articles/4d5a5526aa403d
-- https://zenn.dev/yoshii0110/articles/9f900b11203834qii
+- https://zenn.dev/yoshii0110/articles/9f900b11203834
 
