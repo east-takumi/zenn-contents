@@ -87,10 +87,13 @@ end
 
 ### Binding event
 
+
 ### Auto-generated Status Constants
 
 ### Bang events
-
+- オブジェクトの自動保存可否を選択できる
+- 自動保存の内容には，保存するクラスのすべてのバリデーションも含まれる
+- 
 ### Timestamps
 
 ### Transaction support
