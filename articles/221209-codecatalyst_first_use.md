@@ -1,5 +1,5 @@
 ---
-title: "Amazon Code Catalystを触ってみた"
+title: "Amazon CodeCatalystを触ってみた"
 emoji: "🏃🏻‍♂️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "CodeCatalyst", "感想", "Tech"]
@@ -9,23 +9,25 @@ published: true
 この記事は[CAMPFIRE Advent Calendar 2022](https://qiita.com/advent-calendar/2022/campfire)の9日目の記事です。
 
 今年はAWS re:Invent 2022で発表されたAmazon CodeCatalystの触ってみたブログです！
+（触ってみたが毎年恒例になりそう...w）
 
 :::message
 2022/12/09時点での操作ログになります
 この時点ではプレビュー版でオレゴンリージョンのみで提供されています
 :::
 
-# Amazon Code Catalystについて
+# Amazon CodeCatalystについて
 > ソフトウェア開発および配信の統合サービスである Amazon CodeCatalyst を使用すると、ソフトウェア開発チームは AWS 上でアプリケーションを迅速かつ簡単に計画、開発、コラボレーション、構築、および配信できるため、開発ライフサイクル全体でフリクションが軽減されます。
 
 ※ AWSさんブログから引用
 
 うむ、なんかすごそう（語彙力）
+要は爆速で作ることができるということか？←
 
 # とりあえず使ってみる
 
 ## スペースを構築
-1. Amazon CodeCatalystのページにアクセスして、「Sign up」or「Sing in」をクリック
+1. [Amazon CodeCatalystのページ](https://codecatalyst.aws/explore)にアクセスして、「Sign up」or「Sing in」をクリック
   実はAWS マネジメントコンソールとは全く別ページのようなので注意。
   ![](https://storage.googleapis.com/zenn-user-upload/53c20646de43-20221209.png)
 2. AWS Builder IDでログイン
