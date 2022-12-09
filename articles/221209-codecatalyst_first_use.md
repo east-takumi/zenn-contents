@@ -135,6 +135,10 @@ published: true
   メンバーの管理やCI/CD実行結果の通知設定などができる。
   ![](https://storage.googleapis.com/zenn-user-upload/c516a0f92fbb-20221209.png)
 
+## ちゃんと作られてる？
+  作られてた👀
+  ![](https://storage.googleapis.com/zenn-user-upload/d5a819aa4ac9-20221209.png)
+
 
 ## Issueを使ってみる
 - Issueを作成
