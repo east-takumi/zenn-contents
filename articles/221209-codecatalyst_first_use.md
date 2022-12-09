@@ -41,11 +41,11 @@ published: true
     ![](https://storage.googleapis.com/zenn-user-upload/23190c5e879b-20221209.png)
 
     ![](https://storage.googleapis.com/zenn-user-upload/1737bbcb787f-20221209.png)
-    
+
     4. マネジメントコンソールでCodeCatalyst用のスタンダードのIAMを作成
     ![](https://storage.googleapis.com/zenn-user-upload/b26da23adb92-20221209.png)
 
-    ![](https://storage.googleapis.com/zenn-user-upload/d953073faab3-20221209.png)
+    ![](https://storage.googleapis.com/zenn-user-upload/8a1808205ea7-20221209.png)
 
 4. スペースを作成
   3まで終了してCodeCatalystのページに戻って、「Create Space」をクリックしてスペースの作成は完了。
