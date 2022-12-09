@@ -150,7 +150,7 @@ published: false
 
 - Issueの管理
   ボード形式で進行度の変更も直感的にできる
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/d51f3ff077df-20221209.png)
 
 
 ## IDEの接続を使ってみる
@@ -166,14 +166,13 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
 :::
 
 1. 「Create Dev Enviroment」をクリックすると選択できるIDEが表示されるので、VScodeを選択
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/3149fd9368ef-20221209.png)
 
 2. どのブランチでつかうかなどを選択して「Create」をクリック
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/31f483939e4b-20221209.png)
 
 3. ローカルのVScodeが起動するのでプロジェクトを確認
   AWS Tool Kitがインストールされてない場合は、事前にインストールしておく。
-  ![]()
 
 4. 使い終わったあと
   CodeCatalystのCode→Dev Enviromentから対象の開発環境設定を選択して、Actions→Stopをクリックする。
@@ -182,18 +181,21 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
   どのくらい使用したかはSpaceのBillingsから確認できる
   :::
 
-  ![]()
 5. もしIDEを変更したい場合、CodeCatalystのCode→Dev Enviromentから、対象の開発環境設定を削除してからIDEの選択をし直す事が可能
-  ![]()
+
+![](https://storage.googleapis.com/zenn-user-upload/7f04b805988e-20221209.png)
 
 ## コードを変更~デプロイまでしてみる
 今回は出力する文章を変更してみる。
 
 1. 作業ブランチを作成
     1. 「Source Reqositories」→「Action」→「Create branch」をクリックする
-      ![]()
+      ![](https://storage.googleapis.com/zenn-user-upload/6a1f011b997f-20221209.png)
+
     2. ブランチの名前とどのブランチから派生させるかを入力して「Create」をクリックしたら作成完了
-      ![]()
+      ![](https://storage.googleapis.com/zenn-user-upload/d12de4e944dc-20221209.png)
+
+      ![](https://storage.googleapis.com/zenn-user-upload/b177a2390a1b-20221209.png)
 
 2. コードの変更とPushまで
   IDEで出力文章を変更して，IDEのターミナルからリモートにPushする。（今回は省略）
@@ -206,10 +208,10 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
         - Destination branch: マージ先のブランチ（main）
         - Pull request title: Pull Requestのタイトル
         - Pull request description: Pull Requestの説明（任意項目）
-      ![]()
+    ![](https://storage.googleapis.com/zenn-user-upload/40c4c53845da-20221209.png)
 
     3. 作成が完了すると、「Changes」で差分を確認できる
-      ![]()
+      ![](https://storage.googleapis.com/zenn-user-upload/31c1ff832c4d-20221209.png)
 
 4. mainブランチにマージ
   対象のPull Requestで「Merge」をクリックし，マージの方式を選択したらマージ完了
