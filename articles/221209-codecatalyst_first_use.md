@@ -12,104 +12,145 @@ published: false
 
 :::message
 2022/12/09時点での操作ログになります
+この時点ではプレビュー版でオレゴンリージョンのみで提供されています
 :::
 
 # Amazon Code Catalystについて
-Amazon Code Catalystは
+> ソフトウェア開発および配信の統合サービスである Amazon CodeCatalyst を使用すると、ソフトウェア開発チームは AWS 上でアプリケーションを迅速かつ簡単に計画、開発、コラボレーション、構築、および配信できるため、開発ライフサイクル全体でフリクションが軽減されます。
+
+※ AWSさんブログから引用
+
+うむ、なんかすごそう（語彙力）
 
 # とりあえず使ってみる
 
 ## スペースを構築
 1. Amazon CodeCatalystのページにアクセスして、「Sign up」or「Sing in」をクリック
   実はAWS マネジメントコンソールとは全く別ページのようなので注意。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/53c20646de43-20221209.png)
 
 2. AWS Builder IDでログイン
   AWS Builder IDなるものを使うのだが、これはAWSアカウント（マネジメントコンソールにアクセスするもの）とは全く別物なので作成した記憶がない人はここで作成しましょう。
+  ![](https://storage.googleapis.com/zenn-user-upload/6553ca7360ed-20221209.png)
 
 3. AWSアカウントとの紐付け
   ここで紐付けたAWSアカウントにCodeCatalystで発生した請求を送ったり、後述するAWSサービスにはこのAWSアカウントでアクセスする。
+  ![](https://storage.googleapis.com/zenn-user-upload/9ed8251129a6-20221209.png)
 
-    1. 紐付けするAWSアカウントのマネジメントコンソールからはAWSアカウントIDをコピーする
+    1. 紐付けするAWSアカウントのマネジメントコンソールからはAWSアカウントIDをコピー
+    ![]()
 
     2. コピーしたIDを入力、「Verify」をクリックすると、マネジメントコンソールに遷移する
+    ![]()
 
     3. 「Verify space」をクリックし、紐付け成功
+    ![](https://storage.googleapis.com/zenn-user-upload/23190c5e879b-20221209.png)
 
-    4. CodeCatalyst用のスタンダードのIAMを作る
+    ![](https://storage.googleapis.com/zenn-user-upload/1737bbcb787f-20221209.png)
+
+    4. マネジメントコンソールでCodeCatalyst用のスタンダードのIAMを作成
+    ![](https://storage.googleapis.com/zenn-user-upload/b26da23adb92-20221209.png)
+
+    ![](https://storage.googleapis.com/zenn-user-upload/d953073faab3-20221209.png)
 
 4. スペースを作成
   3まで終了してCodeCatalystのページに戻って、「Create Space」をクリックしてスペースの作成は完了。
+  ![](https://storage.googleapis.com/zenn-user-upload/d7ef0b9cecd9-20221209.png)
 
 ## スペース管理ページを見ていく
 
 - Projects
   プロジェクト（作り方については後述）の一覧がここで見れる。
+  ![]()
 
 - Activity
   スペース内での行動（誰が何のアクションをしたのか）が記録されていて、ここで見ることができる。
   アクションごとのフィルタリングできる。
+  ![](https://storage.googleapis.com/zenn-user-upload/0aab019c0a91-20221209.png)
 
 - Members
   スペースのメンバー管理がここででき、メンバーの招待もできる。
+  ![]()
 
 - Installed extensions
   ほかサービスとの接続のための拡張機能を管理できる。
   Ex. GitHubのリポジトリとの接続 etc.
+  ![]()
 
 - AWS accounts
   紐付けるAWSアカウントの管理ができる。
+  ![]()
 
 - Space settings
   スペース自体の名前の変更などができる。
+  ![]()
 
 - Billings
   CodeCatalystの利用状況などを確認できる。
+  ![]()
 
 ## プロジェクトを作成
-1. 「Create Project」をクリックする
+1. 「Create Project」をクリック
 
-2. プロジェクトの作成の仕方を選択する
+2. プロジェクトの作成の仕方を選択
     1. blueprintからテンプレートを選択するかどうかを選択
       今回はblueprintを使う
+      ![](https://storage.googleapis.com/zenn-user-upload/11dbb39143f3-20221209.png)
 
-    2. 一覧から作成するblueprintを選択する
+    2. 一覧から作成するblueprintを選択
         - Webアプリケーションやサーバレスアプリケーションなどが準備されている
+        ![](https://storage.googleapis.com/zenn-user-upload/d63ffc72d7a5-20221209.png)
+
         - 選択するとblueprintで定義されている構成の説明やデプロイで使うIAMロールの内容などを見ることができる
+        ![](https://storage.googleapis.com/zenn-user-upload/b34e1123037b-20221209.png)
         
-3. プロジェクトの名前やプロジェクトをどのAWSアカウントのリソースで作成するかなどを設定して、
-  - Lambda構成がある場合、どの言語で構成するかなども選択する
+3. プロジェクトの名前やプロジェクトを紐付けるAWSアカウントやIAMなどを設定
+  ![](https://storage.googleapis.com/zenn-user-upload/5e87faf6ceb2-20221209.png)
+
+  - Lambda構成がある場合、どの言語で構成するかも選択する必要がある
+  ![](https://storage.googleapis.com/zenn-user-upload/cd91ca653254-20221209.png)
+
 
 4. 3まで完了したら「Create Project」をクリックして、プロジェクトの作成は完了
-
+  ![](https://storage.googleapis.com/zenn-user-upload/5be9ade75680-20221209.png)
 
 ## プロジェクトの中身を見ていく
 
 ### Overview
   プロジェクトの概要などを確認できる。
+  ![]()
   
 ### Issues
   Issueの管理ができる。使い方については後述。
+  ![]()
 
 ### Code
   リポジトリやPull Request、開発環境の管理ができる。
+  ![]()
 
 ### CI/CD
   CI/CDのワークフローの作成や実行状況の管理ができる。
+  ![]()
 
 ### Reports
   テストのカバレッジなどが確認できる。
+  ![]()
 
 ### ProjectSetting
   メンバーの管理やCI/CD実行結果の通知設定などができる。
+  ![]()
 
 
 ## Issueを使ってみる
 - Issueを作成
   Issueの内容もMarkdownで記載できるし、進行度や優先度、カスタムフィールドの作成もできる
+  ![](https://storage.googleapis.com/zenn-user-upload/2c25c5d72363-20221209.png)
+
+  ![](https://storage.googleapis.com/zenn-user-upload/2dd7150a573f-20221209.png)
 
 - Issueの管理
   ボード形式で進行度の変更も直感的にできる
+  ![]()
 
 
 ## IDEの接続を使ってみる
@@ -124,39 +165,55 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
   - 複数ユーザーで使う場合の挙動は未検証
 :::
 
-1. 「Create Dev Enviroment」をクリックすると選択できるIDEが表示されるので、VScodeを選択する
-2. どのブランチでつかうかなどを選択して「Create」をクリックする
+1. 「Create Dev Enviroment」をクリックすると選択できるIDEが表示されるので、VScodeを選択
+  ![]()
+
+2. どのブランチでつかうかなどを選択して「Create」をクリック
+  ![]()
+
 3. ローカルのVScodeが起動するのでプロジェクトを確認
   AWS Tool Kitがインストールされてない場合は、事前にインストールしておく。
+  ![]()
+
 4. 使い終わったあと
   CodeCatalystのCode→Dev Enviromentから対象の開発環境設定を選択して、Actions→Stopをクリックする。
-    :::message
-    この開発環境設定をどのくらいの時間使っているかが無料利用枠だと制限があるため
-    どのくらい使用したかはSpaceのBillingsから確認できる
-    :::
-5. もしIDEを変更したい場合、CodeCatalystのCode→Dev Enviromentから、対象の開発環境設定を削除してからIDEの選択をし直す事ができる
+  :::message
+  この開発環境設定をどのくらいの時間使っているかが無料利用枠だと制限があるため
+  どのくらい使用したかはSpaceのBillingsから確認できる
+  :::
+
+  ![]()
+5. もしIDEを変更したい場合、CodeCatalystのCode→Dev Enviromentから、対象の開発環境設定を削除してからIDEの選択をし直す事が可能
+  ![]()
 
 ## コードを変更~デプロイまでしてみる
 今回は出力する文章を変更してみる。
 
 1. 作業ブランチを作成
     1. 「Source Reqositories」→「Action」→「Create branch」をクリックする
+      ![]()
     2. ブランチの名前とどのブランチから派生させるかを入力して「Create」をクリックしたら作成完了
+      ![]()
 
 2. コードの変更とPushまで
   IDEで出力文章を変更して，IDEのターミナルからリモートにPushする。（今回は省略）
 
 3. Pull Requestの作成
     1. 「Pull requests」→「Create pull request」をクリックする
+      ![]()
     2. 情報を入力して、「Create」をクリックする
         - Source branch: マージ元のブランチ（作業ブランチ）
         - Destination branch: マージ先のブランチ（main）
         - Pull request title: Pull Requestのタイトル
         - Pull request description: Pull Requestの説明（任意項目）
+      ![]()
+
     3. 作成が完了すると、「Changes」で差分を確認できる
+      ![]()
 
 4. mainブランチにマージ
   対象のPull Requestで「Merge」をクリックし，マージの方式を選択したらマージ完了
+  ![]()
 
 5. デプロイワークフロー実行状況を確認
   現状何故か落ちてる...調査中！！！！
@@ -199,4 +256,5 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
 
 # 参考記事
 - https://aws.amazon.com/jp/blogs/aws/announcing-amazon-codecatalyst-preview-a-unified-software-development-service/
+- https://aws.amazon.com/jp/blogs/news/announcing-amazon-codecatalyst-preview-a-unified-software-development-service/
 
