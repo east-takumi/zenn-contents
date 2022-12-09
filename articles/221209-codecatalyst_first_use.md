@@ -3,7 +3,7 @@ title: "Amazon Code Catalystを触ってみた"
 emoji: "🏃🏻‍♂️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "CodeCatalyst", "感想", "Tech"]
-published: false
+published: true
 ---
 
 この記事は[CAMPFIRE Advent Calendar 2022](https://qiita.com/advent-calendar/2022/campfire)の9日目の記事です。
@@ -28,26 +28,20 @@ published: false
 1. Amazon CodeCatalystのページにアクセスして、「Sign up」or「Sing in」をクリック
   実はAWS マネジメントコンソールとは全く別ページのようなので注意。
   ![](https://storage.googleapis.com/zenn-user-upload/53c20646de43-20221209.png)
-
 2. AWS Builder IDでログイン
   AWS Builder IDなるものを使うのだが、これはAWSアカウント（マネジメントコンソールにアクセスするもの）とは全く別物なので作成した記憶がない人はここで作成しましょう。
   ![](https://storage.googleapis.com/zenn-user-upload/6553ca7360ed-20221209.png)
-
 3. AWSアカウントとの紐付け
   ここで紐付けたAWSアカウントにCodeCatalystで発生した請求を送ったり、後述するAWSサービスにはこのAWSアカウントでアクセスする。
   ![](https://storage.googleapis.com/zenn-user-upload/9ed8251129a6-20221209.png)
-
     1. 紐付けするAWSアカウントのマネジメントコンソールからはAWSアカウントIDをコピー
-    ![]()
-
+    ![](https://storage.googleapis.com/zenn-user-upload/208465e4d719-20221209.png)
     2. コピーしたIDを入力、「Verify」をクリックすると、マネジメントコンソールに遷移する
-    ![]()
-
     3. 「Verify space」をクリックし、紐付け成功
     ![](https://storage.googleapis.com/zenn-user-upload/23190c5e879b-20221209.png)
 
     ![](https://storage.googleapis.com/zenn-user-upload/1737bbcb787f-20221209.png)
-
+    
     4. マネジメントコンソールでCodeCatalyst用のスタンダードのIAMを作成
     ![](https://storage.googleapis.com/zenn-user-upload/b26da23adb92-20221209.png)
 
@@ -61,7 +55,7 @@ published: false
 
 - Projects
   プロジェクト（作り方については後述）の一覧がここで見れる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/37f63681576d-20221209.png)
 
 - Activity
   スペース内での行動（誰が何のアクションをしたのか）が記録されていて、ここで見ることができる。
@@ -70,28 +64,27 @@ published: false
 
 - Members
   スペースのメンバー管理がここででき、メンバーの招待もできる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/e64f50db9a3a-20221209.png)
 
 - Installed extensions
   ほかサービスとの接続のための拡張機能を管理できる。
   Ex. GitHubのリポジトリとの接続 etc.
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/b1c5ea746b82-20221209.png)
 
 - AWS accounts
   紐付けるAWSアカウントの管理ができる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/1f89eca7b7da-20221209.png)
 
 - Space settings
   スペース自体の名前の変更などができる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/7b55db6da5d6-20221209.png)
 
 - Billings
   CodeCatalystの利用状況などを確認できる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/9dc724b66305-20221209.png)
 
 ## プロジェクトを作成
 1. 「Create Project」をクリック
-
 2. プロジェクトの作成の仕方を選択
     1. blueprintからテンプレートを選択するかどうかを選択
       今回はblueprintを使う
@@ -118,27 +111,29 @@ published: false
 
 ### Overview
   プロジェクトの概要などを確認できる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/baeacb7423c2-20221209.png)
   
 ### Issues
   Issueの管理ができる。使い方については後述。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/2975c63ef0e3-20221209.png)
 
 ### Code
   リポジトリやPull Request、開発環境の管理ができる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/89f94cc27c56-20221209.png)
 
 ### CI/CD
   CI/CDのワークフローの作成や実行状況の管理ができる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/365391a1e0fc-20221209.png)
 
 ### Reports
   テストのカバレッジなどが確認できる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/f399d7a75993-20221209.png)
+
+  ![](https://storage.googleapis.com/zenn-user-upload/acec043c8700-20221209.png)
 
 ### ProjectSetting
   メンバーの管理やCI/CD実行結果の通知設定などができる。
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/c516a0f92fbb-20221209.png)
 
 
 ## Issueを使ってみる
@@ -202,12 +197,13 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
 
 3. Pull Requestの作成
     1. 「Pull requests」→「Create pull request」をクリックする
-      ![]()
     2. 情報を入力して、「Create」をクリックする
-        - Source branch: マージ元のブランチ（作業ブランチ）
-        - Destination branch: マージ先のブランチ（main）
-        - Pull request title: Pull Requestのタイトル
-        - Pull request description: Pull Requestの説明（任意項目）
+        ```
+        Source branch: マージ元のブランチ（作業ブランチ）
+        Destination branch: マージ先のブランチ（main）
+        Pull request title: Pull Requestのタイトル
+        Pull request description: Pull Requestの説明（任意項目）
+        ```
     ![](https://storage.googleapis.com/zenn-user-upload/40c4c53845da-20221209.png)
 
     3. 作成が完了すると、「Changes」で差分を確認できる
@@ -215,10 +211,13 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
 
 4. mainブランチにマージ
   対象のPull Requestで「Merge」をクリックし，マージの方式を選択したらマージ完了
-  ![]()
+  ![](https://storage.googleapis.com/zenn-user-upload/c022a51cb20a-20221209.png)
 
 5. デプロイワークフロー実行状況を確認
-  現状何故か落ちてる...調査中！！！！
+  現状何故か落ちてる...(なんで！？😇)
+  調査中！
+  ![](https://storage.googleapis.com/zenn-user-upload/fb9b2f7ad464-20221209.png)
+
 6. 動作確認
   続報待ち！！！！
 
@@ -240,7 +239,7 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
 - 一部ラジオボタンとかが使いにくかった
   - blueprintの選択のところなどはラジオボタンのところをクリックしないとだめだったので、そのへんの小さな部分は今後ちょっとずつ変更してくれると信じてる
 - IAM絡みの権限エラーなどがぱっとみわからない
-  - デプロイがエラーしててAWSリソース絡みだと全くその内容が見えないようで、できたら見れたらうれしい
+  - デプロイがエラーしててAWSリソース絡みだと全くその内容が見えないようで、見れたらうれしい
 
 ## まとめ
 昨年のAmplify Studioといい、アプリケーション層に向けた新サービスが年々出てきていますが、CodeCatalystはまさか！こんなものがでてくるなんて！という感じです。
