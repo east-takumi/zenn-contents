@@ -10,6 +10,10 @@ published: false
 
 今年はAWS re:Invent 2022で発表されたAmazon CodeCatalystの触ってみたブログです！
 
+:::message
+2022/12/09時点での操作ログになります
+:::
+
 # Amazon Code Catalystについて
 Amazon Code Catalystは
 
@@ -51,7 +55,7 @@ Amazon Code Catalystは
 
 - Installed extensions
   ほかサービスとの接続のための拡張機能を管理できる。
-  Ex. GitHubのリポジトリとの接続（この接続手順は後述） etc.
+  Ex. GitHubのリポジトリとの接続 etc.
 
 - AWS accounts
   紐付けるAWSアカウントの管理ができる。
@@ -60,7 +64,7 @@ Amazon Code Catalystは
   スペース自体の名前の変更などができる。
 
 - Billings
-  
+  CodeCatalystの利用状況などを確認できる。
 
 ## プロジェクトを作成
 1. 「Create Project」をクリックする
@@ -97,7 +101,7 @@ Amazon Code Catalystは
   テストのカバレッジなどが確認できる。
 
 ### ProjectSetting
-  メンバーの管理や通知設定（Slackへの通知が可能でやり方は後述）などができる。
+  メンバーの管理やCI/CD実行結果の通知設定などができる。
 
 
 ## Issueを使ってみる
@@ -110,7 +114,6 @@ Amazon Code Catalystは
 
 ## IDEの接続を使ってみる
 CodeCatalystではCloud9だけではなく、所有しているIDEを利用することができるので，今回はVScodeでつかってみた。
-
 
 :::message
 - 2022/12/09時点で選択できるIDEはCloud9とVScode、JetBrainの一部IDEのみ
@@ -137,13 +140,28 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
 今回は出力する文章を変更してみる。
 
 1. 作業ブランチを作成
-2. コードの変更とPushまで
-3. Pull Requestの作成
-4. mainブランチにマージ
-5. デプロイワークフロー実行状況を確認
-6. 動作確認
+    1. 「Source Reqositories」→「Action」→「Create branch」をクリックする
+    2. ブランチの名前とどのブランチから派生させるかを入力して「Create」をクリックしたら作成完了
 
-## Slack連携してみる
+2. コードの変更とPushまで
+  IDEで出力文章を変更して，IDEのターミナルからリモートにPushする。（今回は省略）
+
+3. Pull Requestの作成
+    1. 「Pull requests」→「Create pull request」をクリックする
+    2. 情報を入力して、「Create」をクリックする
+        - Source branch: マージ元のブランチ（作業ブランチ）
+        - Destination branch: マージ先のブランチ（main）
+        - Pull request title: Pull Requestのタイトル
+        - Pull request description: Pull Requestの説明（任意項目）
+    3. 作成が完了すると、「Changes」で差分を確認できる
+
+4. mainブランチにマージ
+  対象のPull Requestで「Merge」をクリックし，マージの方式を選択したらマージ完了
+
+5. デプロイワークフロー実行状況を確認
+  現状何故か落ちてる...調査中！！！！
+6. 動作確認
+  続報待ち！！！！
 
 # 使ってみての感想
 私が今までで触ってみての感想になります。
@@ -152,7 +170,10 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
 - あらゆる機能をオールインワンしてる感じ
   - 今までであれば，VScode，Asana，Github etc. のように様々なサービスを組み合わせて運用する形でやっていたことが，CodeCatalyst一つで完結する方向性に進んでいる印象
   - それぞれの機能がスペシャリストレベル（コード管理ならGitHubとか）とまではなくとも、4名くらいまでの小規模&&ハッカソンなど数日で完結するようなプロジェクトであれば、積極的に使っていきたいと思った
-- IDEを自前で持っているものを使えるのと
+- IDEを自前で持っているものを使え、ローカルマシンで環境構築などをしなくてよいからとても楽
+  - IDEからターミナルを見てみるとAmazon Linuxが動いてた👀
+  - （未検証）ローカルマシン由来のエラーとか回避できる？
+    - Ex.チーム開発してると，ある人は起動できてある人は起動できない→原因ローカルマシンのセッティングの問題のようなもの
 
 ## もうちょっとと思う点
 出たばかりのサービスなので、まだまだこれからのアップデートに大きな期待をしていることを前提でこうなったらいいなぐらいで捉えてください🙏
@@ -163,8 +184,19 @@ CodeCatalystではCloud9だけではなく、所有しているIDEを利用す�
   - デプロイがエラーしててAWSリソース絡みだと全くその内容が見えないようで、できたら見れたらうれしい
 
 ## まとめ
+昨年のAmplify Studioといい、アプリケーション層に向けた新サービスが年々出てきていますが、CodeCatalystはまさか！こんなものがでてくるなんて！という感じです。
 
+商用で使うかどうかはまだプレビューということもあり、まだ様子見かなと。
+今後使い所になるかな？と思ってるのは、
+- これから新規で始めるプロジェクト（人数も数人規模）
+- 前述にもあるハッカソン
+- プロジェクトの関係でローカルマシンに1から環境構築する必要はあるがHTMLや文章の修正ぐらいのPushしかしないなどの方
+とかですかね
+
+すでにプロジェクトがあり、サポート体制などが十分であるというチームからすると、まだ物足りなく感じると思いますが、今後CodeCatalystに乗り代わってくる未来は十分考えれると思ってます。
+
+個人的に使用感としては結構いいなーと思っていて、今後のアップデート注目していきます。
 
 # 参考記事
-- 
+- https://aws.amazon.com/jp/blogs/aws/announcing-amazon-codecatalyst-preview-a-unified-software-development-service/
 
