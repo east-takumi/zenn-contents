@@ -1,9 +1,9 @@
 ---
 title: "Amazon ElastiCacheのクラスターへのアクセスルートについて調べてみた👀"
-emoji: "🚪"
+emoji: "👀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "AmazonElastiCache", "Tech"]
-published: false
+published: true
 ---
 
 ※ 2024-09-24時点の筆者が確認している情報/画面の状態です。
